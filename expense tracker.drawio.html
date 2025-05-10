@@ -1,12 +1,36 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<title>draw.io</title>
-<meta http-equiv="refresh" content="0;URL='https://app.diagrams.net/#Hw15147m%2Fexpense-tracker-diagram-%2Fmain%2Fexpense%20tracker.drawio.html#%7B%22pageId%22%3A%22R2lEEEUBdFMjLlhIrx00%22%7D'"/>
-<meta charset="utf-8"/>
-</head>
-<body>
-<div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot; agent=\&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36\&quot; version=\&quot;27.0.3\&quot;&gt;&lt;diagram id=\&quot;R2lEEEUBdFMjLlhIrx00\&quot; name=\&quot;Page-1\&quot;&gt;&lt;mxGraphModel dx=\&quot;1281\&quot; dy=\&quot;562\&quot; grid=\&quot;1\&quot; gridSize=\&quot;10\&quot; guides=\&quot;1\&quot; tooltips=\&quot;1\&quot; connect=\&quot;1\&quot; arrows=\&quot;1\&quot; fold=\&quot;1\&quot; page=\&quot;1\&quot; pageScale=\&quot;1\&quot; pageWidth=\&quot;850\&quot; pageHeight=\&quot;1100\&quot; math=\&quot;0\&quot; shadow=\&quot;0\&quot; extFonts=\&quot;Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker\&quot;&gt;&lt;root&gt;&lt;mxCell id=\&quot;0\&quot;/&gt;&lt;mxCell id=\&quot;1\&quot; parent=\&quot;0\&quot;/&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;&lt;/diagram&gt;&lt;/mxfile&gt;&quot;,&quot;toolbar&quot;:&quot;pages zoom layers lightbox&quot;,&quot;page&quot;:0}"></div>
-<a style="position:absolute;top:50%;left:50%;margin-top:-128px;margin-left:-64px;" href="https://app.diagrams.net/#Hw15147m%2Fexpense-tracker-diagram-%2Fmain%2Fexpense%20tracker.drawio.html#%7B%22pageId%22%3A%22R2lEEEUBdFMjLlhIrx00%22%7D" target="_blank"><img border="0" src="https://app.diagrams.net/images/drawlogo128.png"/></a>
-</body>
-</html>
+<!DOCTYPE html> <html> <head> <meta charset="utf-8"> <title>Expense Tracker ERD</title> <script type="text/javascript" src="https://www.draw.io/js/viewer.min.js"></script> </head> <body> <div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph=" { &quot;highlight&quot;: &quot;#0000ff&quot;, &quot;target&quot;: &quot;_blank&quot;, &quot;lightbox&quot;: true, &quot;nav&quot;: true, &quot;resize&quot;: true, &quot;zoom&quot;: 1, &quot;xml&quot;: &quot;&lt;mxfile host=\&quot;app.diagrams.net\&quot;&gt;&lt;diagram name=\&quot;ExpenseTrackerERD\&quot; id=\&quot;123\&quot;&gt;&lt;mxGraphModel dx=\&quot;1000\&quot; dy=\&quot;1000\&quot; grid=\&quot;1\&quot; gridSize=\&quot;10\&quot; guides=\&quot;1\&quot; tooltips=\&quot;1\&quot; connect=\&quot;1\&quot; arrows=\&quot;1\&quot; fold=\&quot;1\&quot; page=\&quot;1\&quot; pageScale=\&quot;1\&quot; pageWidth=\&quot;850\&quot; pageHeight=\&quot;1100\&quot;&gt; &lt;root&gt; &lt;mxCell id=\&quot;0\&quot;/&gt; &lt;mxCell id=\&quot;1\&quot; parent=\&quot;0\&quot;/&gt;
+  <!-- Users -->
+  <mxCell id=&quot;users&quot; value=&quot;<b>users</b><br/>id (PK)<br/>name<br/>email<br/>password<br/>created_at<br/>updated_at&quot; style=&quot;shape=swimlane;whiteSpace=wrap;html=1;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;>
+  <mxGeometry x=&quot;20&quot; y=&quot;20&quot; width=&quot;180&quot; height=&quot;160&quot; as=&quot;geometry&quot;/>
+  </mxCell>
+  
+  <!-- Categories -->
+  <mxCell id=&quot;categories&quot; value=&quot;<b>categories</b><br/>id (PK)<br/>user_id (FK)<br/>name<br/>type<br/>created_at<br/>updated_at&quot; style=&quot;shape=swimlane;whiteSpace=wrap;html=1;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;>
+  <mxGeometry x=&quot;250&quot; y=&quot;20&quot; width=&quot;180&quot; height=&quot;180&quot; as=&quot;geometry&quot;/>
+  </mxCell>
+  
+  <!-- Expenses -->
+  <mxCell id=&quot;expenses&quot; value=&quot;<b>expenses</b><br/>id (PK)<br/>user_id (FK)<br/>category_id (FK)<br/>amount<br/>description<br/>expense_date<br/>created_at<br/>updated_at&quot; style=&quot;shape=swimlane;whiteSpace=wrap;html=1;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;>
+  <mxGeometry x=&quot;20&quot; y=&quot;240&quot; width=&quot;200&quot; height=&quot;200&quot; as=&quot;geometry&quot;/>
+  </mxCell>
+  
+  <!-- Recurring Expenses -->
+  <mxCell id=&quot;recurring_expenses&quot; value=&quot;<b>recurring_expenses</b><br/>id (PK)<br/>user_id (FK)<br/>category_id (FK)<br/>amount<br/>description<br/>start_date<br/>frequency<br/>interval<br/>next_occurrence<br/>end_date<br/>active<br/>created_at<br/>updated_at&quot; style=&quot;shape=swimlane;whiteSpace=wrap;html=1;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;>
+  <mxGeometry x=&quot;250&quot; y=&quot;240&quot; width=&quot;220&quot; height=&quot;280&quot; as=&quot;geometry&quot;/>
+  </mxCell>
+  
+  <!-- Incomes -->
+  <mxCell id=&quot;incomes&quot; value=&quot;<b>incomes</b><br/>id (PK)<br/>user_id (FK)<br/>category_id (FK)<br/>amount<br/>description<br/>income_date<br/>created_at<br/>updated_at&quot; style=&quot;shape=swimlane;whiteSpace=wrap;html=1;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;>
+  <mxGeometry x=&quot;500&quot; y=&quot;20&quot; width=&quot;200&quot; height=&quot;180&quot; as=&quot;geometry&quot;/>
+  </mxCell>
+  
+  <!-- Recurring Incomes -->
+  <mxCell id=&quot;recurring_incomes&quot; value=&quot;<b>recurring_incomes</b><br/>id (PK)<br/>user_id (FK)<br/>category_id (FK)<br/>amount<br/>description<br/>start_date<br/>frequency<br/>interval<br/>next_occurrence<br/>end_date<br/>active<br/>created_at<br/>updated_at&quot; style=&quot;shape=swimlane;whiteSpace=wrap;html=1;&quot; vertex=&quot;1&quot; parent=&quot;1&quot;>
+  <mxGeometry x=&quot;500&quot; y=&quot;240&quot; width=&quot;220&quot; height=&quot;280&quot; as=&quot;geometry&quot;/>
+  </mxCell>
+  
+  </root>
+  </mxGraphModel></diagram></mxfile>"
+  }">
+  
+  </div> </body> </html>
